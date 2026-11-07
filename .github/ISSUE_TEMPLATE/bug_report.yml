@@ -1,0 +1,68 @@
+name: Bug report
+description: Report a problem so it can be ranked (P0–P3) in the issue register.
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Describe what you saw, not what you think the cause is.
+        Severity levels are defined in `triage/issue-register.md`.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you see? Include the exact error message if there was one.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should have happened?
+      description: Include anything that should have arrived but didn't (an email, an order, a sync).
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to ...
+        2. Click ...
+        3. See ...
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: Who is affected and how? Customers, orders, data, internal users.
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Suggested severity
+      description: The triage owner confirms the final level.
+      options:
+        - P0 - customers, data or revenue harmed right now
+        - P1 - serious harm likely soon, or a key flow degraded
+        - P2 - real problem with a workaround or limited reach
+        - P3 - polish, debt or nice-to-have
+        - Not sure
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Where?
+      description: URL, environment (production/staging), browser/device, app version.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Screenshots, log lines, timestamps with timezone. Remove passwords, keys and personal data.
+    validations:
+      required: false

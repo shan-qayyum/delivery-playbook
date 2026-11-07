@@ -1,0 +1,6 @@
+{
+  // Prose repo: long table rows and code-block lines are allowed; prose wraps at 80.
+  "config": {
+    "MD013": { "tables": false, "code_blocks": false }
+  }
+}
